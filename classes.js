@@ -16,11 +16,13 @@ class Car{
         
     }
     toggleAvailability(){
-        isAvailable=!this.isAvailable;
+      let changes=this.isAvailable=!this.isAvailable;
+        console.log(changes);
     }}
 // }
 let myCar= new Car(`Toyota`,`Camry`,2017,true);
-console.log(myCar);
+console.log({myCar});
+myCar.toggleAvailability();
 
 // 2) Create a Rental class or function constructor that has the following properties:
 // ● car (Car object): The car that has been rented.
@@ -38,12 +40,16 @@ class Rental extends Car{
 
     }
     calculateRentalDuration(){
-       return this.rentalEndDate-this.rentalStartDate;
+      this.rentalStartDate=new Date(`2023-04-19`)
+      this.rentalEndDate=new Date(`2023-05-20`)
+     let  rentalDurationInDays=this.rentalEndDate-this.rentalStartDate;
+       console.log( rentalDurationInDays);
      
 
     }
 }
- let  myR=new Rental("Toyota","Range",2002,false,"Kennedy",new Date(),new Date());
+ let  myR=new Rental("Toyota","Range",2002,false,"Kennedy",new Date(`2023-04-19`),new Date(`2023-06-19`));
+ myR.calculateRentalDuration();
  console.log(myR);
 
 
@@ -118,4 +124,6 @@ class Quiz{
     }
   }
 
+function Carr(make,model,year,isAvailable){
 
+}
